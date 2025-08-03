@@ -13,7 +13,7 @@ import { ChatState } from '../../Context/ChatProvider';
 const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain = () => {} }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [groupChatName, setGroupChatName] = useState("");
-  const [search, setSearch] = useState("");
+  const [, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [renameloading, setRenameLoading] = useState(false);
