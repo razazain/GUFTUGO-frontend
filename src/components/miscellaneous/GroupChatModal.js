@@ -24,7 +24,7 @@ const GroupChatModal = ({ children }) => {
     if (!query) {
       return;
     }
-
+    console.log(search);
     try {
       setLoading(true);
       const config = {
