@@ -30,7 +30,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain = () =>
       const config = {
         headers: { Authorization: `Bearer ${user.token}` },
       };
-      const { data } = await axios.get(`/api/user?search=${query}`, config);
+      const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/user?search=${query}`, config);
       setSearchResult(data);
     } catch (error) {
       toast({
@@ -62,7 +62,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain = () =>
       setRenameLoading(true);
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
       const { data } = await axios.put(
-        `/api/chat/rename`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/chat/rename`,
         { chatId: selectedChat?._id, chatName: groupChatName.trim() },
         config
       );
@@ -117,7 +117,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain = () =>
       setLoading(true);
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
       const { data } = await axios.put(
-        `/api/chat/groupadd`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/chat/groupadd`,
         { chatId: selectedChat._id, userId: user1._id },
         config
       );
@@ -153,7 +153,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain = () =>
       setLoading(true);
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
       const { data } = await axios.put(
-        `/api/chat/groupremove`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/chat/groupremove`,
         { chatId: selectedChat._id, userId: user1._id },
         config
       );
